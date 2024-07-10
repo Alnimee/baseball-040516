@@ -28,6 +28,6 @@ class TestGame(TestCase):
         result: GameResult = self.game.guess("123")
 
         self.assertIsNotNone(result)
-        self.assertTrue(result.solved)
-        self.assertEqual(result.strikes, 3)
-        self.assertEqual(result.balls, 0)
+        self.assertTrue(result.get_solved())
+        self.assertEqual(result.get_strikes(), 3)
+        self.assertEqual(result.get_balls(), 0)
